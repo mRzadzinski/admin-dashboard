@@ -1,20 +1,91 @@
+@charset "UTF-8";
 body {
   display: grid;
-  grid-template: 1fr 4.5fr/1fr 3fr;
+  grid-template: 1fr 4.5fr/300px 1fr;
   grid-template-areas: "side head" "side main";
   width: 100vw;
   height: 100vh;
   margin: 0;
+  font-size: medium;
+  font-family: "Roboto", "-apple-system", "BlinkMacSystemFont", "Tahoma", "sans‑serif";
 }
 
-.head {
+.header {
+  display: grid;
   grid-area: head;
   background-color: white;
 }
+.header input[type=text] {
+  float: right;
+  padding: 6px;
+  border: none;
+  margin-top: 8px;
+  margin-right: 16px;
+  font-size: 17px;
+}
+.header svg {
+  height: 1rem;
+  width: auto;
+}
 
 .sidebar {
+  display: grid;
+  grid-template-rows: 1.5fr 1fr 6fr 1fr 3fr 8fr;
   grid-area: side;
   background-color: #1e92d3;
+  color: white;
+  padding: 1rem;
+  font-weight: 500;
+}
+.sidebar > :first-child {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 0.5rem;
+  grid-row: 1/2;
+  place-items: center start;
+  font-size: 1.8rem;
+}
+.sidebar > :first-child svg {
+  height: 3.8rem;
+  width: auto;
+}
+.sidebar > :nth-child(2) {
+  display: grid;
+  grid-template-rows: repeat(6, 1fr);
+  grid-row: 3/4;
+}
+.sidebar > :nth-child(2) #file-icon {
+  height: 1.8rem;
+  width: auto;
+}
+.sidebar > :nth-child(3) {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  grid-row: 5/6;
+}
+.sidebar > :nth-child(2) > div, .sidebar > :nth-child(3) > div {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.3rem;
+  place-items: center start;
+  font-size: 1.2rem;
+  padding-left: 1rem;
+  cursor: pointer;
+  transition-duration: 100ms;
+  -moz-user-select: none;
+   -ms-user-select: none;
+       user-select: none;
+  -webkit-user-select: none;
+}
+.sidebar > :nth-child(2) > div:active, .sidebar > :nth-child(3) > div:active {
+  transform: scale(0.97);
+}
+.sidebar > :nth-child(2) > div svg, .sidebar > :nth-child(3) > div svg {
+  height: 1.6rem;
+  width: auto;
+}
+.sidebar svg {
+  fill: white;
 }
 
 .main {
