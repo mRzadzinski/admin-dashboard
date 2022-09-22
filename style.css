@@ -13,14 +13,22 @@ body {
 .header {
   display: grid;
   grid-template: 1fr 1.5fr/2fr 1fr;
+  position: relative;
+  z-index: 2;
   grid-area: head;
   padding: 0 4rem 0 4rem;
   background-color: white;
   place-items: center start;
+  box-shadow: 0 10px 10px -15px #3c3c3c;
 }
 .header svg {
   height: 1.6rem;
   width: auto;
+  cursor: pointer;
+  transition-duration: 100ms;
+}
+.header svg:active {
+  transform: scale(0.95);
 }
 .header > div {
   display: grid;
@@ -46,6 +54,31 @@ body {
   justify-items: end;
   gap: 1.5rem;
 }
+.header > :nth-child(2) > * {
+  cursor: pointer;
+  transition-duration: 100ms;
+}
+.header > :nth-child(2) > *:active {
+  transform: scale(0.95);
+}
+.header > :nth-child(3) {
+  grid-template-columns: 72px 1fr;
+  gap: 1.5rem;
+}
+.header > :nth-child(3) .avatar {
+  height: 72px;
+  width: auto;
+  border-radius: 72px;
+}
+.header > :nth-child(3) #hi-there {
+  font-size: 0.85rem;
+  font-weight: 600;
+  margin-bottom: 0.2rem;
+}
+.header > :nth-child(3) #hi-there + div {
+  font-size: 1.4rem;
+  font-weight: 600;
+}
 .header > :nth-child(4) {
   grid-template-columns: repeat(3, 1fr);
   gap: 2rem;
@@ -55,7 +88,7 @@ body {
   display: grid;
   grid-template-rows: 1.5fr 1fr 6fr 1fr 3fr 8fr;
   grid-area: side;
-  background-color: #1e92d3;
+  background-color: #334155;
   color: white;
   padding: 1rem;
   font-weight: 500;
@@ -86,24 +119,27 @@ body {
   grid-template-rows: repeat(3, 1fr);
   grid-row: 5/6;
 }
-.sidebar > :nth-child(2) > div, .sidebar > :nth-child(3) > div {
+.sidebar > :nth-child(2) > div,
+.sidebar > :nth-child(3) > div {
   display: grid;
   grid-template-columns: auto 1fr;
   gap: 1.3rem;
   place-items: center start;
   font-size: 1.2rem;
   padding-left: 1rem;
-  cursor: pointer;
-  transition-duration: 100ms;
   -moz-user-select: none;
    -ms-user-select: none;
        user-select: none;
   -webkit-user-select: none;
+  cursor: pointer;
+  transition-duration: 100ms;
 }
-.sidebar > :nth-child(2) > div:active, .sidebar > :nth-child(3) > div:active {
-  transform: scale(0.97);
+.sidebar > :nth-child(2) > div:active,
+.sidebar > :nth-child(3) > div:active {
+  transform: scale(0.95);
 }
-.sidebar > :nth-child(2) > div svg, .sidebar > :nth-child(3) > div svg {
+.sidebar > :nth-child(2) > div svg,
+.sidebar > :nth-child(3) > div svg {
   height: 1.6rem;
   width: auto;
 }
@@ -114,22 +150,22 @@ body {
 .main {
   grid-area: main;
   background-color: #e2e8f0;
+  position: relative;
+  z-index: 1;
 }
 
 /* CSS */
 .button-18 {
   align-items: center;
-  background-color: #1e92d3;
+  background-color: #334155;
   border: 0;
   border-radius: 100px;
   box-sizing: border-box;
   color: #ffffff;
   cursor: pointer;
-  display: inline-flex;
   font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 600;
-  justify-content: center;
   line-height: 20px;
   width: 100px;
   height: 40px;
@@ -148,12 +184,6 @@ body {
   vertical-align: middle;
 }
 
-.button-18:hover,
-.button-18:focus {
-  background-color: #16437E;
-  color: #ffffff;
-}
-
 .button-18:active {
   background: #09223b;
   color: rgba(255, 255, 255, 0.7);
@@ -166,7 +196,7 @@ body {
 }
 
 .avatar {
-  height: 3.5rem;
+  height: 56px;
   width: auto;
-  border-radius: 2rem;
+  border-radius: 56px;
 }/*# sourceMappingURL=style.css.map */

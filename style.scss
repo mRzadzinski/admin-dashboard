@@ -1,4 +1,13 @@
-$sidebar-color: #1e92d3;
+@mixin onclick-effect {
+    cursor: pointer;
+    transition-duration: 100ms;
+
+    &:active {
+        transform: scale(.95);
+    }
+}
+
+$sidebar-color: #334155;
 
 body {
     display: grid;
@@ -18,14 +27,18 @@ body {
     display: grid;
     grid-template: 1fr 1.5fr / 2fr 1fr;
 
+    position: relative;
+    z-index: 2;
     grid-area: head;
     padding: 0 4rem 0 4rem;
     background-color: white;
     place-items: center start;
+    box-shadow:  0 10px 10px -15px #3c3c3c; 
 
     svg {
         height: 1.6rem;
         width: auto;
+        @include onclick-effect();
     }
 
     > div {
@@ -55,10 +68,32 @@ body {
         grid-template-columns: 1fr 26px 56px auto;
         justify-items: end;
         gap: 1.5rem;
+
+        > * {
+            @include onclick-effect();
+        }
     }
 
     > :nth-child(3) {
+        grid-template-columns: 72px 1fr;
+        gap: 1.5rem;
 
+        .avatar {
+            height: 72px;
+            width: auto;
+            border-radius: 72px;
+        }
+
+        #hi-there {
+            font-size: .85rem;
+            font-weight: 600;
+            margin-bottom: .2rem;
+        }
+
+        #hi-there + div {
+            font-size: 1.4rem;
+            font-weight: 600;
+        }
     }
 
     > :nth-child(4) {
@@ -110,7 +145,8 @@ body {
         grid-row: 5 / 6;
     }
 
-    > :nth-child(2) > div, > :nth-child(3) > div {
+    > :nth-child(2) > div, 
+    > :nth-child(3) > div {
         display: grid;
         grid-template-columns: auto 1fr;
         gap: 1.3rem;
@@ -118,14 +154,9 @@ body {
 
         font-size: 1.2rem;
         padding-left: 1rem;
-        cursor: pointer;
-        transition-duration: 100ms;
         user-select: none;
         -webkit-user-select: none;
-
-        &:active {
-            transform: scale(.97);
-        }
+        @include onclick-effect();
 
         svg {
             height: 1.6rem;
@@ -141,6 +172,8 @@ body {
 .main {
     grid-area: main;
     background-color: #e2e8f0;
+    position: relative;
+    z-index: 1;
 }
 
 /* CSS */
@@ -152,11 +185,9 @@ body {
   box-sizing: border-box;
   color: #ffffff;
   cursor: pointer;
-  display: inline-flex;
   font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
   font-size: 16px;
   font-weight: 600;
-  justify-content: center;
   line-height: 20px;
   width: 100px;
   height: 40px;
@@ -173,12 +204,6 @@ body {
   vertical-align: middle;
 }
 
-.button-18:hover,
-.button-18:focus { 
-  background-color: #16437E;
-  color: #ffffff;
-}
-
 .button-18:active {
   background: #09223b;
   color: rgb(255, 255, 255, .7);
@@ -191,7 +216,7 @@ body {
 }
 
 .avatar {
-    height: 3.5rem;
+    height: 56px;
     width: auto;
-    border-radius: 2rem;
+    border-radius: 56px;
 }
