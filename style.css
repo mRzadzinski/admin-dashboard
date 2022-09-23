@@ -211,9 +211,6 @@ body {
   padding: 0.5rem 1.8rem 0.5rem 1.8rem;
   box-shadow: 10px 10px 10px -14px #3c3c3c;
 }
-.main .events-card > * {
-  padding: 0.6rem 0 0.6rem 0;
-}
 .main .events-card ::first-line {
   font-size: 0.85rem;
   font-weight: 600;
@@ -221,6 +218,7 @@ body {
   color: black;
 }
 .main .events-card :nth-child(2) {
+  padding: 1rem 0 1.5rem 0;
   border-top: 1px solid rgb(210, 210, 210);
   border-bottom: 1px solid rgb(210, 210, 210);
 }
