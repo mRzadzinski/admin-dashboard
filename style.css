@@ -11,11 +11,11 @@ body {
 
 .header {
   display: grid;
-  grid-template: 1fr 1.5fr/2fr 1fr;
+  grid-template: 1fr 1.5fr/1fr 380px;
   position: relative;
   z-index: 2;
   grid-area: head;
-  padding: 0.3rem 4rem 0.3rem 4rem;
+  padding: 0.6rem 4rem 0.6rem 4rem;
   background-color: white;
   place-items: center start;
   box-shadow: 10px 10px 10px -14px #3c3c3c;
@@ -74,6 +74,7 @@ body {
 }
 .header > :nth-child(4) {
   grid-template-columns: repeat(3, 1fr);
+  justify-items: end;
   gap: 2rem;
 }
 
@@ -253,7 +254,9 @@ body {
 
 /* CSS */
 .button-18 {
+  display: grid;
   align-items: center;
+  justify-items: center;
   background-color: #334155;
   border: 0;
   border-radius: 100px;
@@ -261,12 +264,11 @@ body {
   color: #ffffff;
   cursor: pointer;
   font-family: -apple-system, system-ui, system-ui, "Segoe UI", Roboto, "Helvetica Neue", "Fira Sans", Ubuntu, Oxygen, "Oxygen Sans", Cantarell, "Droid Sans", "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Lucida Grande", Helvetica, Arial, sans-serif;
-  font-size: 16px;
+  font-size: 14px;
   font-weight: 600;
   line-height: 20px;
-  width: 120px;
-  height: 40px;
-  min-width: 0px;
+  width: 100px;
+  height: 35px;
   overflow: hidden;
   padding: 0px;
   padding-left: 20px;
