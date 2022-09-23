@@ -31,13 +31,16 @@ body {
   gap: 1rem;
 }
 .header > :first-child input[type=text] {
-  padding: 6px;
+  padding: 6px 10px 6px 10px;
   border: none;
   border-radius: 30px;
   font-size: 1rem;
   background-color: #e2e8f0;
   width: 95%;
   min-width: 170px;
+}
+.header > :first-child input[type=text]:focus {
+  outline: 2px solid #334155;
 }
 .header > :nth-child(2) {
   grid-template-columns: 1fr 26px 56px auto;
@@ -204,7 +207,7 @@ body {
   border-radius: 5px;
   font-size: 0.65rem;
   font-weight: 300;
-  color: #3c3c3c;
+  color: #646464;
   padding: 0.5rem 1.8rem 0.5rem 1.8rem;
   box-shadow: 10px 10px 10px -14px #3c3c3c;
 }
@@ -221,6 +224,35 @@ body {
   border-top: 1px solid rgb(210, 210, 210);
   border-bottom: 1px solid rgb(210, 210, 210);
 }
+.main .active-users {
+  display: grid;
+  grid-template-rows: 2.3rem 1fr;
+}
+.main .users-card {
+  display: grid;
+  grid-template-rows: repeat(4, 1fr);
+  align-items: center;
+  background-color: white;
+  border-radius: 5px;
+  font-size: 0.65rem;
+  font-weight: 300;
+  color: #646464;
+  padding: 0.5rem 0.5rem 0.5rem 1rem;
+  box-shadow: 10px 10px 10px -14px #3c3c3c;
+}
+.main .user {
+  display: grid;
+  grid-template-columns: 50px 1fr;
+  align-items: center;
+  gap: 0.8rem;
+}
+.main .user ::first-line {
+  font-size: 0.8rem;
+  font-weight: 500;
+  line-height: 1.3rem;
+  color: black;
+}
+
 /* CSS */
 .button-18 {
   align-items: center;
@@ -263,7 +295,7 @@ body {
 }
 
 .avatar {
-  height: 56px;
+  height: 50px;
   width: auto;
   border-radius: 56px;
 }
